@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:task2_level1/gen/assets.gen.dart'; // Assuming this is where the assets are located
 
 class HomeAppBar extends StatelessWidget {
@@ -31,11 +32,10 @@ class HomeAppBar extends StatelessWidget {
             left: 27.w,
             child: Image(
               image: AssetImage(Assets.images.photo1.path),
-  
             ),
           ),
           Positioned(
-            top: 130.h, 
+            top: 130.h,
             left: 27.w,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,9 +65,19 @@ class HomeAppBar extends StatelessWidget {
             right: 20.w,
             child: Row(
               children: [
-                Icon(Icons.notifications, color: Colors.white, size: 24.sp),
+                IconButton(
+                    onPressed: () {
+                      context.push('/notifications');
+                    },
+                    icon: Icon(Icons.notifications,
+                        color: Colors.white, size: 24.sp)),
                 SizedBox(width: 15.w),
-                Icon(Icons.shopping_cart, color: Colors.white, size: 24.sp),
+                IconButton(
+                    onPressed: () {
+                      context.push('/cart-empty');
+                    },
+                    icon: Icon(Icons.shopping_cart,
+                        color: Colors.white, size: 24.sp)),
               ],
             ),
           ),
