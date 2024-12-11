@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:task2_level1/core/routes/app_router.dart';
 
 class CategoryCard extends StatelessWidget {
   final String title;
