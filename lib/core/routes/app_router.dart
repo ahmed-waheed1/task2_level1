@@ -22,9 +22,12 @@ class AppRouter {
         routes: [
           GoRoute(
             path: 'categories',
-            builder: (context, state) => const CategoryListingScreen(),
+            builder: (context, state) {
+              final categoryName = state.extra as String;
+              return CategoryListingScreen(categoryName: categoryName);
+            },
           ),
-  GoRoute(
+          GoRoute(
             path: 'product-details',
             builder: (context, state) {
               final product = state.extra as ProductModel;
